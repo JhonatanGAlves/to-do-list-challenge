@@ -57,4 +57,61 @@ export const ContentMain = styled.div`
       }
     }
   }
+
+  .tasks-created-and-completed {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+
+    .tasks-created,
+    .tasks-completed {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      font-size: 0.875rem;
+
+      .counter {
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+
+        color: var(--gray-200);
+        background: var(--gray-400);
+      }
+    }
+
+    .tasks-created {
+      color: var(--blue-500);
+    }
+
+    .tasks-completed {
+      color: var(--purple-500);
+    }
+  }
+
+  .to-do-list {
+    margin-top: 1.5rem;
+
+    border-radius: 8px;
+    border-top: 1px solid var(--gray-400);
+
+    .no-tasks {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      margin: 4rem 0;
+
+      p {
+        font-weight: 700;
+
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
 `;

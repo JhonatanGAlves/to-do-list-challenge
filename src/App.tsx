@@ -1,9 +1,10 @@
 import { GlobalStyles } from "../styles/global";
+import { Header } from "../components/header/Header";
 
 export const App = () => {
   return (
     <>
-      <h1>Hello World!</h1>
+      <Header />
       <GlobalStyles />
     </>
   );

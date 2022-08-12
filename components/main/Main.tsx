@@ -1,8 +1,14 @@
 import { ContainerMain, ContentMain } from "./styles";
-import { PlusCircle } from "phosphor-react";
-import clipboardIcon from "../../assets/images/clipboard-icon.svg";
+import { Check, PlusCircle, Trash } from "phosphor-react";
+import { useState } from "react";
 
 export const Main = () => {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+
+  function handleClickToCheck() {
+    setIsChecked(!isChecked);
+  }
+
   return (
     <ContainerMain>
       <ContentMain>
@@ -24,13 +30,31 @@ export const Main = () => {
           </div>
         </div>
         <div className="to-do-list">
-          <div className="no-tasks">
-            <img src={clipboardIcon} alt="Ícone de Clipboard" />
-            <p>
-              Você ainda não tem tarefas cadastradas
-              <br />
-              <span>Crie tarefas e organize seus itens a fazer</span>
-            </p>
+          <div className="with-tasks">
+            <div className="checkbox-text">
+              {isChecked ? (
+                <div onClick={handleClickToCheck} className="checked">
+                  <Check size={10} />
+                </div>
+              ) : (
+                <div onClick={handleClickToCheck} className="unchecked" />
+              )}
+              <span
+                style={
+                  isChecked
+                    ? {
+                        color: "var(--gray-300)",
+                        textDecoration: "line-through",
+                      }
+                    : {}
+                }
+              >
+                Integer urna interdum massa libero auctor neque turpis turpis
+                semper. Duis vel sed famesdwd wd wdwdwdwdwd dwdwdwd wdwdwdwd
+                wdwdwd w
+              </span>
+            </div>
+            <Trash size={16} />
           </div>
         </div>
       </ContentMain>

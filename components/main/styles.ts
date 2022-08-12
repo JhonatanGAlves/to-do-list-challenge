@@ -94,22 +94,62 @@ export const ContentMain = styled.div`
   .to-do-list {
     margin-top: 1.5rem;
 
-    border-radius: 8px;
-    border-top: 1px solid var(--gray-400);
-
-    .no-tasks {
+    .with-tasks {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 1rem;
-      margin: 4rem 0;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 1rem;
+      border: 1px solid var(--gray-400);
+      border-radius: 8px;
 
-      p {
-        font-weight: 700;
+      background: var(--gray-500);
+
+      .checkbox-text {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+
+        .unchecked,
+        .checked {
+          width: 1rem;
+          height: 1rem;
+          border-radius: 50%;
+
+          cursor: pointer;
+        }
+
+        .unchecked {
+          border: 1px solid var(--blue-500);
+          background: transparent;
+        }
+
+        .checked {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          color: var(--gray-100);
+          background: var(--purple-700);
+        }
 
         span {
-          font-weight: 400;
+          color: var(--gray-100);
+        }
+      }
+
+      span {
+        width: 620px;
+        margin-top: -2px;
+        font-size: 0.875rem;
+      }
+
+      svg {
+        cursor: pointer;
+
+        transition: color 0.2s;
+
+        &:hover {
+          color: #e25858;
         }
       }
     }
